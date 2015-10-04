@@ -19,7 +19,10 @@ public class CalendarViewGrid extends GridView{
     private Calendar mRightNow = null;
     private Cell[][] mCells = new Cell[6][7];
     private Context context;
-    private static final int TODAY_CELL_COLOR = 0xFFFFEB3B;
+    private int todayCellColor = 0xFFFFEB3B;
+    private int weekdayCellColor = 0xffeeeeee;
+    private int weekendCellColor = 0xffdedede;
+
     private OnMonthChangeListener monthChangeListener;
 
     public CalendarViewGrid(Context context) {
@@ -141,7 +144,7 @@ public class CalendarViewGrid extends GridView{
                 }
                 // get today
                 if(tmp[week][day].day==thisDay && tmp[week][day].thisMonth) {
-                    mCells[week][day].color = TODAY_CELL_COLOR;
+                    mCells[week][day].color = todayCellColor;
                 }
             }
         }
@@ -190,14 +193,14 @@ public class CalendarViewGrid extends GridView{
     public class WeekdayCell extends Cell {
         public WeekdayCell(int dayOfMon, int month, int year) {
             super(dayOfMon, month, year, true);
-            color = 0xffeeeeee;
+            color = weekdayCellColor;
         }
     }
 
     private class WeekendCell extends Cell {
         public WeekendCell(int dayOfMon, int month, int year) {
             super(dayOfMon, month, year, true);
-            color = 0xffdedede;
+            color = weekendCellColor;
         }
     }
 }

@@ -18,7 +18,7 @@ public class CellView extends LinearLayout{
     public CellView(Context context, AttributeSet attrs) {
         super(context, attrs);
         dayTextView = new TextView(context);
-        dayTextView.setLayoutParams(new LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT));
+        dayTextView.setLayoutParams(new ViewGroup.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT));
         dayTextView.setPadding(10, 10, 10, 10);
         dayTextView.setText("sd");
         this.setGravity(Gravity.CENTER);
