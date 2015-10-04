@@ -3,6 +3,7 @@ package com.pg.calendarview;
 import android.content.Context;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AbsListView;
 import android.widget.ArrayAdapter;
 import android.widget.LinearLayout;
 
@@ -22,7 +23,7 @@ public class CalenderAdapter extends ArrayAdapter<Cell> {
         CellView cellView ;
         if(convertView == null){
             cellView =  new CellView(this.context);
-            cellView.setLayoutParams(new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT,
+            cellView.setLayoutParams(new AbsListView.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT,
                     ViewGroup.LayoutParams.MATCH_PARENT));
             cellView.setText("" + items.get(position).getDayOfMonth());
             convertView = cellView;
